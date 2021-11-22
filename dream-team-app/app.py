@@ -8,11 +8,9 @@ import plot
 import certifi
 import urllib3
 
-# Feel free to import additional libraries if you like
 
 app = Flask(__name__, static_url_path='/static')
 
-# Paste the API-key you have received as the value for "x-api-key"
 headers = {
     "Content-Type": "application/json",
     "Accept": "application/hal+json",
@@ -20,10 +18,7 @@ headers = {
 }
 
 
-# Example of function for REST API call to get data from Lime
 def get_api_data(headers, url):
-
-    # First call to get first data page from the API
     """
     response = requests.get(url=url,
                             headers=headers,
