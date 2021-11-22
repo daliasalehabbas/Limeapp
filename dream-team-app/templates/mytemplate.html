@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<h1>My example data</h1>
+	<br>
+
+	<div class="card-group">
+		{% for item in items %}
+		<div class="card">
+		  <img style="width: 200px;">
+		  <div class="card-body">
+		    <h5 class="card-title">Fruit</h5>
+		    <p class="card-text">{{ item.name }}</p>
+		  </div>
+		</div>
+		{% endfor %}
+	</div>
+
+
+ 
+	<nav aria-label="Page navigation example">
+		<ul class="pagination">
+		  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+		  <li class="page-item"><a class="page-link" href="/example">1</a></li>
+		  <li class="page-item"><a class="page-link" href="/avgpermonth">2</a></li>
+		  <li class="page-item"><a class="page-link" href="/myroute">3</a></li>
+		  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+		</ul>
+	  </nav>
+
+	<br>
+{% endblock %}

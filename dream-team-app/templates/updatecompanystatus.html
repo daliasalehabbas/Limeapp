@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<h1>Company status</h1>
+<hr class="my-3">
+<img  class="rounded mx-auto d-block" src="{{ image }}"/>
+
+<div class="jumbotron text-center">
+    <h3>Definitions</h3>
+    <hr class="my-4">
+    <p>Customer- A company which has bought anything the past year</p>
+    <p>Prospect- A company which has never bough anything</p>
+    <p>Inactive- A company which has bought something in the past. but not the last year</p>
+
+</div>
+
+<div class="container">           
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Customer</th>
+          <th>Current status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for company in status_list %}
+        <tr>
+          <td>{{company}}</td>
+          <td>{{status_list[company]}}</td>
+        </tr>
+        {% endfor %}
+        
+      </tbody>
+    </table>
+  </div>
+
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <li class="page-item"><a class="page-link" href="/valuepercustomer">Previous</a></li>
+      <li class="page-item"><a class="page-link" href="/average">1</a></li>
+      <li class="page-item"><a class="page-link" href="/avgpermonth">2</a></li>
+      <li class="page-item"><a class="page-link" href="/valuepercustomer">3</a></li>
+      <li class="page-item"><a class="page-link" href="/updatecompanystatus">4</a></li>
+    </ul>
+  </nav>
+
+{% endblock %}

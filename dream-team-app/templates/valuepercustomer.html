@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<h1>Total value per customer</h1>
+
+<div class="jumbotron text-center">
+    <p>The total value for the won deals per customer</p>
+    <hr class="my-4">
+    <p>Period: 2020-01-01 to 2020-12-31</p>
+</div>
+
+<div class="container">           
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Customer</th>
+          <th>Total(SEK)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for customer in customer_list %}
+        <tr>
+        
+    
+          <td>{{customer}}</td>
+            
+          <td>{{customer_list[customer]}}</td>
+        
+         
+        </tr>
+        {% endfor %}
+        
+      </tbody>
+    </table>
+  </div>
+
+  
+  <img class="rounded mx-auto d-block" src="{{ image }}"/>
+
+
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <li class="page-item"><a class="page-link" href="/avgpermonth">Previous</a></li>
+      <li class="page-item"><a class="page-link" href="/average">1</a></li>
+      <li class="page-item"><a class="page-link" href="/avgpermonth">2</a></li>
+      <li class="page-item"><a class="page-link" href="/valuepercustomer">3</a></li>
+      <li class="page-item"><a class="page-link" href="/updatecompanystatus">4</a></li>
+      <li class="page-item"><a class="page-link" href="/updatecompanystatus">Next</a></li>
+    
+    </ul>
+  </nav>
+{% endblock %}

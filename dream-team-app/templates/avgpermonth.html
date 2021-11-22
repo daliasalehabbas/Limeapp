@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<h1>Averages per month</h1>
+
+<div class="jumbotron text-center">
+    <p>The average value for the won deals and number of won deals per month </p>
+    <hr class="my-4">
+    <p>Period: 2020-01-01 to 2020-12-31</p>
+</div>
+
+<div class="container">           
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>Won deals</th>
+          <th>Average(SEK)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in monthly_avg %}
+        <tr>
+        
+          <td>{{monthly_avg[item][2]}}</td>
+            
+          <td>{{monthly_avg[item][1]}}</td>
+        
+          <td>{{monthly_avg[item][0]}}</td>
+        </tr>
+        {% endfor %}
+    
+      </tbody>
+    </table>
+  </div>
+  
+
+  <img class="rounded mx-auto d-block" src="{{ image }}"/>
+
+  
+	<nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+		  <li class="page-item"><a class="page-link" href="/average">Previous</a></li>
+		  <li class="page-item"><a class="page-link" href="/average">1</a></li>
+		  <li class="page-item"><a class="page-link" href="/avgpermonth">2</a></li>
+          <li class="page-item"><a class="page-link" href="/valuepercustomer">3</a></li>
+          <li class="page-item"><a class="page-link" href="/updatecompanystatus">4</a></li>
+		  <li class="page-item"><a class="page-link" href="/valuepercustomer">Next</a></li>
+		</ul>
+	  </nav>
+
+
+
+  {% endblock %}

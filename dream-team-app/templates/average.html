@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+
+	<h1>Total average</h1>
+		<div class="jumbotron text-center">
+			<h1>Average of value</h1>
+			<p>The average value of the won cases between the period 2020-01-01 to 2020-12-31 </p>
+			<hr class="my-4">
+			<h4>Value(SEK): {{ avg }}</h4>
+		</div>
+
+		
+	
+
+
+		<img  class="rounded mx-auto d-block" src="{{ image }}"/>
+
+
+		  <nav aria-label="Page navigation example">
+			<ul class="pagination justify-content-center">
+			  <li class="page-item"><a class="page-link" href="/average">Previous</a></li>
+			  <li class="page-item"><a class="page-link" href="/average">1</a></li>
+			  <li class="page-item"><a class="page-link" href="/avgpermonth">2</a></li>
+			  <li class="page-item"><a class="page-link" href="/valuepercustomer">3</a></li>
+			  <li class="page-item"><a class="page-link" href="/updatecompanystatus">4</a></li>
+			  <li class="page-item"><a class="page-link" href="/avgpermonth">Next</a></li>
+			</ul>
+		  </nav>
+	
+
+	<br>
+
+
+
+
+{% endblock %}
